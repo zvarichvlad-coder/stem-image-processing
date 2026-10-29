@@ -1,0 +1,12 @@
+{
+	"seed": 42,
+	"gaussian": {
+		"size": 5,
+		"sigma": 1.2
+	},
+	"paths": {
+		"raw_dir": "data/raw",
+		"out_dir": "data/processed",
+		"metrics_file": "metrics_report.csv"
+	}
+}
