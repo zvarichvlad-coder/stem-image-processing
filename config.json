@@ -1,12 +1,10 @@
 {
-	"seed": 42,
-	"gaussian": {
-		"size": 5,
-		"sigma": 1.2
-	},
-	"paths": {
-		"raw_dir": "data/raw",
-		"out_dir": "data/processed",
-		"metrics_file": "metrics_report.csv"
-	}
+  "raw_dir": "data/raw",
+  "proc_dir": "data/processed",
+  "csv_report": "metrics_report.csv",
+  "plot_report": "data/processed/metrics_telemetry_plots.png",
+  "gaussian": {
+    "size": 5,
+    "sigma": 1.2
+  }
 }
