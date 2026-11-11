@@ -4,7 +4,6 @@
 - PSNR (Peak Signal-to-Noise Ratio)
 - SSIM (Structural Similarity Index Measure)
 """
-
 import numpy as np
 
 
@@ -57,7 +56,12 @@ def get_ssim(img1: np.ndarray, img2: np.ndarray) -> float:
     var_x = np.var(x)
     var_y = np.var(y)
 
-    cov_xy = np.cov(x.flatten(), y.flatten())[0, 1]
+    # Безпечне обчислення коваріації з обробкою суцільно однорідних матриць
+    if x.size > 1 and (var_x > 0 or var_y > 0):
+        cov_matrix = np.cov(x.flatten(), y.flatten())
+        cov_xy = cov_matrix[0, 1] if cov_matrix.ndim == 2 else 0.0
+    else:
+        cov_xy = 0.0
 
     num = (2 * mu_x * mu_y + c1) * (2 * cov_xy + c2)
     den = (mu_x ** 2 + mu_y ** 2 + c1) * (var_x + var_y + c2)
