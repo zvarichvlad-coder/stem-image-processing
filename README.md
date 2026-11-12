@@ -117,14 +117,3 @@ python test_pipeline.py
 ```
 
 ---
-
-### 💡 Як закомітити README.md на GitHub:
-
-Після того як створите цей файл у папці проєкту, виконайте в терміналі 3 команди:
-
-```powershell
-git add README.md
-git commit -m "Add professional README documentation"
-git push origin main
-
-```
